@@ -72,7 +72,6 @@ public class ListViewAdapter2 extends BaseAdapter {
             holder.rank = (TextView) view.findViewById(R.id.tvName);
             holder.btnadd=(ImageView)view.findViewById(R.id.bt_add);
             holder.btnsub=(ImageView)view.findViewById(R.id.bt_minus);
-            holder.btnsub.setVisibility(View.INVISIBLE);
             holder.box=(CheckBox)view.findViewById(R.id.chk);
             holder.box.setOnClickListener( new View.OnClickListener() {
                 public void onClick(View v) {
@@ -95,7 +94,6 @@ public class ListViewAdapter2 extends BaseAdapter {
         holder.btnadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("Button clicked","Clicked");
                 int position=(Integer)v.getTag();
                 final Chemist Chem=worldpopulationlist.get(position);
                 abc=Integer.parseInt(Chem.getQuantity())+1;
@@ -109,17 +107,19 @@ public class ListViewAdapter2 extends BaseAdapter {
         holder.btnsub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("Button clicked","Clicked");
-                int position=(Integer)v.getTag();
-                final Chemist Chem=worldpopulationlist.get(position);
-                if (Integer.parseInt(Chem.getQuantity())>1)
-                 abc=Integer.parseInt(Chem.getQuantity())-1;
-                Chem.setQuantity(String.valueOf(abc));
-                worldpopulationlist.set(position,Chem);
-                Log.e("Button Item",String.valueOf(abc));
-                notifyDataSetChanged();
-                holder.rank.setText(worldpopulationlist.get(position).getQuantity());
+                Log.e("Button clicked", "Clicked");
+                int position = (Integer) v.getTag();
+                final Chemist Chem = worldpopulationlist.get(position);
+                if (Integer.parseInt(Chem.getQuantity()) > 1) {
+                    abc = Integer.parseInt(Chem.getQuantity()) - 1;
+                    Chem.setQuantity(String.valueOf(abc));
+                    worldpopulationlist.set(position, Chem);
+                    Log.e("Button Item", String.valueOf(abc));
+                    notifyDataSetChanged();
+                    holder.rank.setText(worldpopulationlist.get(position).getQuantity());
+                }
             }
+
         });
         holder.box.setTag(actors);
 
