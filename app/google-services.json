@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "125055865784",
+    "firebase_url": "https://d2dmedicine-f6a85.firebaseio.com",
+    "project_id": "d2dmedicine-f6a85",
+    "storage_bucket": "d2dmedicine-f6a85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125055865784:android:a4dfff75ce3a15ae",
+        "android_client_info": {
+          "package_name": "com.bizhawkz.d2dmedicine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125055865784-d700lde3gq0chvr1e9dnlrt1921mhm85.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjrpBMZY9y6fANYo927xze_6qm9WgeCA8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

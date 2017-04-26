@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+    tools:context="com.bizhawkz.d2dmedicine.OrderReplied">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@color/dark"
+        android:minHeight="?attr/actionBarSize"
+        android:titleTextColor="#ffffff">
+
+    </android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/lay1"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical"
+        >
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Order Deliever"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="4dp"
+        android:textStyle="bold"
+        android:textSize="26dp"
+        android:gravity="center"
+        android:id="@+id/btndeparture"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:background="@color/dark"/>
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/ed_expier"
+        android:textSize="16dp"
+        android:layout_below="@+id/btndeparture"
+        android:textColor="@color/text_shadow"
+        android:paddingLeft="10dp"
+        android:inputType="date"
+        android:hint=" Order Departure date"
+        android:textColorHint="#d3d3d3"
+        android:background="@drawable/gradient2"
+        android:singleLine="true"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/lay1"
+        android:id="@+id/lay2"
+        android:orientation="vertical"
+        >
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Out of stock"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingLeft="4dp"
+            android:textStyle="bold"
+            android:textSize="26dp"
+            android:gravity="center"
+            android:id="@+id/btnstock"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white"
+            android:background="@color/dark"/>
+
+        EditText android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dip"
+            android:id="@+id/ed_message"
+            android:paddingTop="2dp"
+            android:hint="\n Rea*"
+            android:paddingBottom="4dp"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:gravity="top"
+            android:paddingLeft="8dp"
+            android:textColorHint="#d3d3d3"
+            android:background="@drawable/gradient2"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="4dp"
+            android:singleLine="true"/>
+    </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="26dp"
+            android:textColor="#ffffff"
+            android:text="Submit"
+            android:id="@+id/btn_continue"
+            android:layout_alignParentBottom="true"
+            android:background="#015480"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentEnd="true"
+            />
+
+
+</RelativeLayout>

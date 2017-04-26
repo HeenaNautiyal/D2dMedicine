@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg1"
+    tools:context="com.heena.D2DMedical.TestSearch">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="6dp"
+        android:id="@+id/lay1"
+        android:background="@drawable/gradient2"
+        android:weightSum="1">
+        <LinearLayout
+            android:layout_width="45dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:id="@+id/imgback"
+                android:background="@drawable/back2_icon"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.01">
+            <EditText
+                android:layout_width="match_parent"
+                android:id="@+id/ed_search"
+                android:hint="Search..."
+                android:singleLine="true"
+                android:textColorHint="#d3d3d3"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="45dp"
+            android:layout_alignParentRight="true"
+            android:layout_height="42dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:id="@+id/search"
+                android:background="@mipmap/ic_search"/>
+        </LinearLayout>
+    </LinearLayout>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:id="@+id/layOUT1"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@+id/lay1"
+        android:layout_above="@+id/btn_continue"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/layOUT2"
+            android:layout_below="@+id/lay1"
+            >
+
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/list"
+                />
+        </RelativeLayout>
+    </ScrollView>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Check Out"
+        android:id="@+id/btn_continue"
+        android:textColor="#ffffff"
+        android:textSize="26dp"
+        android:layout_alignParentBottom="true"
+        android:background="#015480"
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <color name="blue">#accdd6</color>
+    <color name="grey">#808080</color>
+    <color name="dark">#015480</color>
+    <color name="text_shadow">#000000</color>
+    <color name="orange">#FFA500</color>
+    <color name="orchid">#D15FEE</color>
+    <color name="my_spinner_text_color">#ffffff</color>
+</resources>

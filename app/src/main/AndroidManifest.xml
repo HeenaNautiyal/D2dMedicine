@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bizhawkz.d2dmedicine">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TokenGen" />
+        <activity android:name=".Nearchemeist" />
+        <activity android:name=".Chemis" />
+        <activity android:name=".ForgetPassword" />
+        <activity android:name=".Termspage" />
+        <activity
+            android:name=".UploadPresc"
+            android:label="@string/title_activity_data"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Profile" />
+        <activity android:name=".Search" />
+        <activity android:name=".Login" />
+        <activity android:name=".AlertmessageDialog" />
+        <activity android:name=".FirstAidnew" />
+        <activity android:name=".FirstAid1" />
+        <activity android:name=".Ordernow" />
+        <activity android:name=".DailyCare" />
+        <activity android:name=".BabyCare" />
+        <activity android:name=".RegisterOption" />
+        <activity android:name=".Register" />
+        <activity android:name=".CheRegis" />
+        <activity android:name=".UploadMedicine" />
+        <activity android:name=".OrderRecieve" />
+        <activity android:name=".Admincla" />
+        <activity android:name=".Chemistupload" />
+        <activity android:name=".Summery" />
+        <activity android:name=".Test" />
+        <activity android:name=".Test1" />
+        <activity android:name=".Test2" />
+        <activity android:name=".Test3" />
+        <activity android:name=".Test4" />
+        <activity android:name=".DataActivity" />
+        <activity android:name=".Addressadd" />
+        <activity android:name=".OrderPlace1" />
+        <activity android:name=".MainActivity" />
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".Mem" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".OrderTrack" />
+        <activity android:name=".OTCCounter" />
+        <activity android:name=".TestOrderRecieved" />
+        <activity android:name=".OrderReplied"></activity>
+    </application>
+
+</manifest>

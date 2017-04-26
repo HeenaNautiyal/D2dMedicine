@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#015480">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="@color/dark"
+            android:minHeight="?attr/actionBarSize"
+            android:titleTextColor="#ffffff">
+
+        </android.support.v7.widget.Toolbar>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg1"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/layoutTop" >
+
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/layOUT1"
+            android:layout_below="@+id/linearLayout3"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:id="@+id/layOUT2"
+                android:layout_below="@+id/layoutTop"
+                android:padding="15dp"
+                >
+               <!-- <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/coordinatorLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end"
+                        android:src="@android:drawable/ic_lock_power_off"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="8dp"
+                        app:backgroundTint="#015480"
+                        android:layout_marginRight="8dp"
+                        android:layout_alignParentEnd="true" />
+                </android.support.design.widget.CoordinatorLayout>-->
+
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/row"
+                    android:divider="@null"
+                    android:id="@+id/list" />
+
+</RelativeLayout>
+          <!--  </RelativeLayout>-->
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+
+
+
+
