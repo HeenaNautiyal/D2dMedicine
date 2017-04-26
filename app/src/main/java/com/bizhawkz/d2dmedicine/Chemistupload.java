@@ -167,13 +167,17 @@ public class Chemistupload extends AppCompatActivity implements AdapterView.OnIt
                 }else  if(item.equals("Daily Care")) {
                     cat1 = "30";
                 }
+                else if (item.equals("Please select the medicine categories"))
+                {
+                    cat1 = "32";
+                }
 
                 tab = (RadioButton) findViewById(R.id.rb_tab);
                 liq = (RadioButton) findViewById(R.id.rb_liquid);
                 inj = (RadioButton) findViewById(R.id.rb_injec);
 
                 med1 = med.getText().toString();
-                cap = med1.substring(0, 1).toUpperCase() + med1.substring(1);
+
                 manu1 = manufactur.getText().toString();
                 compo1 = comp.getText().toString();
                 des1 = desc.getText().toString();
@@ -203,7 +207,29 @@ public class Chemistupload extends AppCompatActivity implements AdapterView.OnIt
                     builder.show();
 
                 }else {
-                    new uploadmed().execute();
+                    cap = med1.substring(0, 1).toUpperCase() + med1.substring(1);
+                    if(cat1.matches("32")){
+                        AlertDialog.Builder builder = new AlertDialog.Builder(Chemistupload.this);
+                        TextView myMsg = new TextView(Chemistupload.this);
+                        myMsg.setText("Warning!");
+                        myMsg.setGravity(Gravity.CENTER_HORIZONTAL);
+                        myMsg.setTextSize(20);
+
+                        myMsg.setTextColor(Color.BLACK);
+                        builder.setCustomTitle(myMsg);
+                        builder.setMessage("Please select the medicine category.");
+                        builder.setPositiveButton("OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,
+                                                        int which) {
+                                        dialog.cancel();
+                                    }
+                                });
+                        builder.show();
+                    }
+                    else {
+                        new uploadmed().execute();
+                    }
                 }
             }
         });
@@ -304,7 +330,7 @@ public class Chemistupload extends AppCompatActivity implements AdapterView.OnIt
                     myMsg.setTextColor(Color.BLACK);
                     builder.setCustomTitle(myMsg);
                     builder.setMessage("Your medicine has been uploaded");
-                    builder.setPositiveButton("Continue.",
+                    builder.setPositiveButton("Continue",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog,
                                                     int which) {

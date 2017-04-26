@@ -122,8 +122,6 @@ public class Login extends AppCompatActivity {
                     if (email.matches(Expn) && email.length() > 0) {
                         new Logmem().execute();
                     }
-
-
                 } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
                     TextView myMsg = new TextView(Login.this);
@@ -132,7 +130,6 @@ public class Login extends AppCompatActivity {
                     myMsg.setTextSize(20);
 
                     myMsg.setTextColor(Color.WHITE);
-                    //set custom title
                     builder.setCustomTitle(myMsg);
                     builder.setMessage("Please agree to Terms and Conditions Policy.");
                     builder.setPositiveButton("OK",
@@ -146,8 +143,6 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         fvpass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -217,7 +212,7 @@ public class Login extends AppCompatActivity {
                         myMsg.setTextColor(Color.BLACK);
                         builder.setCustomTitle(myMsg);
                         builder.setMessage("You have logged in successfully");
-                        builder.setPositiveButton("Continue.",
+                        builder.setPositiveButton("Continue",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,
                                                         int which) {
@@ -240,8 +235,8 @@ public class Login extends AppCompatActivity {
                     myMsg.setTextSize(20);
                     myMsg.setTextColor(Color.BLACK);
                     builder.setCustomTitle(myMsg);
-                    builder.setMessage("Email/Password is invalid.");
-                    builder.setPositiveButton("OK.",
+                    builder.setMessage("Please activate your account");
+                    builder.setPositiveButton("OK",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog,
                                                     int which) {

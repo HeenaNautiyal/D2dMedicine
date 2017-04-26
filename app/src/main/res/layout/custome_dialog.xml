@@ -15,7 +15,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Query has been Sent to the Admin"
+        android:text="Your message has been sent successfully."
         android:textStyle="bold"
         android:layout_gravity="center"
         android:textSize="20dp"
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="4dp"
             android:textSize="16dp"
-            android:text="He will contact you soon"
+            android:text="Our team will contact you soon"
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="#000000"
@@ -44,15 +44,7 @@
             android:orientation="horizontal"
             android:layout_marginLeft="2dp"
             android:layout_weight="1">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="6dp"
-                android:textSize="20dp"
-                android:gravity="center"
-                android:text="Ok"
-                android:id="@+id/btn_ok"
-                android:background="@drawable/textback"/>
+
         </LinearLayout>
 
     </LinearLayout>

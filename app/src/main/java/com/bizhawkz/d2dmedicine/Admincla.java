@@ -130,16 +130,6 @@ public class Admincla extends AppCompatActivity {
         alertDialogBuilder.setView(promptView);
         final AlertDialog alert = alertDialogBuilder.create();
 
-
-        OK1=(Button)promptView.findViewById(R.id.btn_ok);
-        OK1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alert.dismiss();
-            }
-        });
-
-
         alert.getWindow().getAttributes().windowAnimations = animationSource;
         alert.requestWindowFeature(Window.FEATURE_NO_TITLE);
         WindowManager.LayoutParams wmlp = alert.getWindow().getAttributes();

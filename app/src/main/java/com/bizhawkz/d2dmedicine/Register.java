@@ -239,7 +239,7 @@ public class Register extends AppCompatActivity {
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(Register.this);
                     TextView myMsg = new TextView(Register.this);
-                    myMsg.setText("Congratulations!");
+                    myMsg.setText("Congratulations.....");
                     myMsg.setGravity(Gravity.CENTER_HORIZONTAL);
                     myMsg.setTextSize(20);
                     myMsg.setTextColor(Color.BLACK);

@@ -374,7 +374,7 @@ public class CheRegis extends AppCompatActivity {
                 if (message.equals("1")) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(CheRegis.this);
                     TextView myMsg = new TextView(CheRegis.this);
-                    myMsg.setText("Congratulations!");
+                    myMsg.setText("Congratulations.........");
                     myMsg.setGravity(Gravity.CENTER_HORIZONTAL);
                     myMsg.setTextSize(20);
                     myMsg.setTextColor(Color.BLACK);

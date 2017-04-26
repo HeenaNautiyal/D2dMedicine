@@ -264,7 +264,7 @@
                 android:layout_marginTop="76dp"
                 android:text="Name"
                 android:textColor="#fff"
-                android:textSize="24sp" />
+                android:textSize="18sp" />
         </RelativeLayout>
         <ScrollView
             xmlns:android="http://schemas.android.com/apk/res/android"

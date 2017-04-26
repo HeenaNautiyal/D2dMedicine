@@ -144,7 +144,7 @@
                         android:paddingLeft="10dp"
                         android:textColorHint="#d3d3d3"
                         android:textColor="@color/white"
-                        android:hint="Remark"
+                        android:hint="Type your message here:"
                         android:scrollHorizontally="false"
                         android:scrollbars="vertical"
                         android:singleLine="false" />
@@ -156,14 +156,6 @@
 
 
             <!-- Login button -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Your Query will be send to admin directly"
-                android:textSize="16dp"
-                android:paddingLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/text_shadow"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -431,8 +431,8 @@ public class Addressadd extends AppCompatActivity {
         protected String doInBackground(String... strings) {
             HttpClient httpClient = new DefaultHttpClient();
             String url = "http://d2dmedicine.com/aPPmob_lie/insertdata.php?caseid=18&email=" + mail + "" +
-                    "&mobileno=" + stnum + "&pincode=" + stpin + "&address=" + stad.replaceAll(" ", "%20") + "" +
-                    "&city=" + stcty.replaceAll(" ", "%20") + "&state=" + ststat.replaceAll(" ", "%20") + "&newemail=" + mail2.replaceAll(" ", "");
+                    "&mobileno=" + stnum + "&pincode=" + stpin + "&address=" + stad.replaceAll(" ", "") + "" +
+                    "&city=" + stcty.replaceAll(" ", "") + "&state=" + ststat.replaceAll(" ", "") + "&newemail=" + mail2.replaceAll(" ", "");
             String SetServerString = "";
             HttpGet httpget = new HttpGet(url);
             ResponseHandler<String> responseHandler = new BasicResponseHandler();

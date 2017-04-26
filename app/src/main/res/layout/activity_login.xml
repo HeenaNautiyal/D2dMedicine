@@ -56,7 +56,7 @@
         android:textColor="@color/text_shadow"
         android:background="@drawable/gradient2"
         android:inputType="textPassword"
-        android:hint="Password..."
+        android:hint="Password"
         android:textColorHint="#d3d3d3"
         android:layout_gravity="center_horizontal"
         android:singleLine="true"
