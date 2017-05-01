@@ -191,27 +191,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/rb_injec"
-                        android:text="Injected" />
-                   <!-- <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="8dp"
-                            android:id="@+id/rb_your"
-                            android:text="Your Choice" />
-                        <Button
-                            android:layout_width="127dp"
-                            android:layout_height="29dp"
-                            android:textColor="#ffffff"
-                            android:id="@+id/upload"
-                            android:layout_marginLeft="4dp"
-                            android:layout_marginRight="4dp"
-                            android:background="#015480"
-                            android:text="Upload Image"/>
-                    </LinearLayout>-->
+                        android:text="Injection" />
+
                 </RadioGroup>
             </LinearLayout>
 

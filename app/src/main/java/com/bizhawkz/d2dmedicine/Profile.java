@@ -65,7 +65,7 @@ public class Profile extends AppCompatActivity {
     private void initToolBar() {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("MyProfile");
+        toolbar.setTitle("My Profile");
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
@@ -88,7 +88,6 @@ public class Profile extends AppCompatActivity {
             super.onPreExecute();
             dialog = new ProgressDialog(Profile.this);
             dialog.setMessage("Loading, please wait");
-            dialog.setTitle("Connecting server");
             dialog.show();
             dialog.setCancelable(false);
         }

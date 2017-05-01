@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="">
+    <item android:title="Profile Page">
         <menu>
             <item
                 android:id="@+id/iv_profile"
-                android:title="MyProfile" />
+                android:title="My Profile" />
             <item
                 android:id="@+id/iv_share"
                 android:title="Share"
                 />
             <item
                 android:id="@+id/iv_orderTrack"
-                android:title="Order Track" />
+                android:title="My Order" />
             <item
                 android:id="@+id/iv_signout"
                 android:title="LogOut" />

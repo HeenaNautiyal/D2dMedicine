@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">D2dMed</string>
+    <string name="app_name">D2dMedicine</string>
     <string name="title_activity_data">D2D Medicine</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

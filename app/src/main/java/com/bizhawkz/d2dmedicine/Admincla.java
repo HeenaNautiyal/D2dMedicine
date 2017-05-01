@@ -66,7 +66,7 @@ public class Admincla extends AppCompatActivity {
 
     private void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Contact Us");
+        toolbar.setTitle("Contact Admin");
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
@@ -93,7 +93,7 @@ public class Admincla extends AppCompatActivity {
         @Override
         protected String doInBackground(String... urls) {
             HttpClient httpClient = new DefaultHttpClient();
-            String url = "http://d2dmedicine.com/aPPmob_lie/insertdata.php?caseid=30&email="+mail+"&subject="+Query.replaceAll(" ","%20")+"&enquery="+remark.replaceAll(" ","\n")+"";
+            String url ="http://d2dmedicine.com/aPPmob_lie/insertdata.php?caseid=30&email="+mail+"&subject="+Query.replaceAll(" ","%20")+"&enquery="+remark.replaceAll(" ","%20")+"";
             String SetServerString = "";
             HttpGet httpget = new HttpGet(url);
             ResponseHandler<String> responseHandler = new BasicResponseHandler();
@@ -115,7 +115,10 @@ public class Admincla extends AppCompatActivity {
                 Log.d("Response: ", "> " + message);
                 if (message.equals("1")) {
                     buildDialog(R.style.DialogTheme, "Left - Right Animation!");
+                    rem.setText("");
+                    tvQuery.setText("");
                 }
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

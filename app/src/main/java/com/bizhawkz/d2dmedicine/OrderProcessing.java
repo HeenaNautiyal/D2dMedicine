@@ -4,8 +4,8 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,7 +16,9 @@ import android.widget.Toast;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
@@ -27,25 +29,24 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class OrderRecieve extends AppCompatActivity {
+public class OrderProcessing extends AppCompatActivity {
     ArrayList<Chemist> actorsList;
     ActorAdapter3 adapter;
     SessionManager1 session;
-    String mail,byeremail,orderid,byerid,medicine;
+    String mail,byeremail,orderid,byerid;
     ImageView iv;
     Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_recieve);
+        setContentView(R.layout.activity_order_processing);
         actorsList = new ArrayList<Chemist>();
 
         session = new SessionManager1(getApplicationContext());
         session.checkLogin();
         HashMap<String, String> user = session.getUserDetails();
         mail = user.get(SessionManager1.KEY_EMAIL);
-      
-        new JSONAsyncTask().execute("http://d2dmedicine.com/aPPmob_lie/insertdata.php?caseid=29&email="+mail.replaceAll(" ","")+"");
+        new JSONAsyncTask().execute("http://d2dmedicine.com/aPPmob_lie/insertdata.php?caseid=88&email="+mail+"");
         initToolBar();
 
         ListView listview = (ListView)findViewById(R.id.list);
@@ -62,27 +63,17 @@ public class OrderRecieve extends AppCompatActivity {
                 actorsList.set(position, actors);
                 adapter.updateAdapter(actorsList);
                 adapter.notifyDataSetChanged();
-
                 if (actors.getIsRowSelected()) {
-                    byerid = actors.getDate();
-                    orderid = actors.getId();
-                    medicine = actors.getMedicine();
-                    Intent it= new Intent(OrderRecieve.this,OrderReplied.class);
-                    Bundle b = new Bundle();
-                    b.putString("byeremail", byerid);
-                    b.putString("orderid",orderid);
-                    b.putString("medicine",medicine);
-                    it.putExtras(b);
-                    startActivity(it);
+                    new Compleorder().execute();
                 }
+
             }
         });
-
     }
 
     private void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Order Recieved");
+        toolbar.setTitle("Processing Order Details");
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
@@ -91,7 +82,7 @@ public class OrderRecieve extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent It = new Intent(OrderRecieve.this,UploadMedicine.class);
+                        Intent It = new Intent(OrderProcessing.this,UploadMedicine.class);
                         startActivity(It);
                     }
                 });
@@ -104,7 +95,7 @@ public class OrderRecieve extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            dialog = new ProgressDialog(OrderRecieve.this);
+            dialog = new ProgressDialog(OrderProcessing.this);
             dialog.setMessage("Please wait while Loading...");
             dialog.show();
             dialog.setCancelable(false);
@@ -135,9 +126,8 @@ public class OrderRecieve extends AppCompatActivity {
                         actor.setAddress(object.getString("user_address"));
                         actor.setQuantity(object.getString("med_qty"));
                         actorsList.add(actor);
-                        /*byerid=object.getString("user_email");
+                        byerid=object.getString("user_email");
                         orderid=object.getString("id");
-                        medicine=object.getString("med_name");*/
                     }
                     return true;
                 }
@@ -156,7 +146,43 @@ public class OrderRecieve extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No order has been recieved yet!", Toast.LENGTH_LONG).show();
 
         }
+    }
 
+    private class Compleorder extends AsyncTask<String, String, String>{
+        ProgressDialog dialog;
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog = new ProgressDialog(OrderProcessing.this);
+            dialog.setMessage("Please wait while Loading...");
+            dialog.show();
+            dialog.setCancelable(false);
+            /*pb.setMessage("Please wait while Loading...");
+            pb.show();*/
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            HttpClient httpClient = new DefaultHttpClient();
+            String url ="http://d2dmedicine.com/aPPmob_lie/insertdata.php?caseid=78&uemail="+byerid+"&chemail="+mail+"&order_id="+orderid+"";
+
+            String SetServerString = "";
+            HttpGet httpget = new HttpGet(url);
+            ResponseHandler<String> responseHandler = new BasicResponseHandler();
+            try {
+                SetServerString = httpClient.execute(httpget, responseHandler);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return SetServerString;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            adapter.notifyDataSetChanged();
+            dialog.cancel();
+
+
+        }
     }
 }
-

@@ -23,6 +23,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
@@ -136,16 +137,23 @@ public class Mem extends AppCompatActivity {
         AlertDialog alert = alertDialogBuilder.create();
 
         ed = (EditText) promptView.findViewById(R.id.edittext);
+
         OK1 = (Button) promptView.findViewById(R.id.btn_ok);
         OK1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 a = ed.getText().toString().trim();
-                Intent It = new Intent(Mem.this, Nearchemeist.class);
-                Bundle b = new Bundle();
-                b.putString("pincode", a);
-                It.putExtras(b);
-                startActivity(It);
+                if (a.matches(""))
+                {
+                    Toast.makeText(getApplicationContext(),"Enter the Pin-Code",Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent It = new Intent(Mem.this, Nearchemeist.class);
+                    Bundle b = new Bundle();
+                    b.putString("pincode", a);
+                    It.putExtras(b);
+                    startActivity(It);
+                }
             }
         });
 

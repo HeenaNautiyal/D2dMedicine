@@ -288,8 +288,6 @@ public class Chemistupload extends AppCompatActivity implements AdapterView.OnIt
             super.onPreExecute();
             dialog = new ProgressDialog(Chemistupload.this);
             dialog.setMessage("Please wait while loading");
-          /*  dialog.setMessage("Loading, please wait");
-            dialog.setTitle("Connecting server");*/
             dialog.show();
             dialog.setCancelable(false);
         }

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg1"
+    tools:context="com.bizhawkz.d2dmedicine.ChemistRating">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:id="@+id/layoutTop"
+
+        >
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="@color/dark"
+            android:minHeight="?attr/actionBarSize"
+            android:titleTextColor="#ffffff">
+
+        </android.support.v7.widget.Toolbar>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:id="@+id/Text1"
+        android:layout_below="@+id/layoutTop"
+        android:src="@drawable/logonew1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/lay2"
+        android:layout_below="@+id/Text1"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_chemistmail"
+        android:text="Chemist mail"
+        android:textSize="16dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/text_shadow"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+       />
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/ratingBar1"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/ed_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|left"
+            android:lines="20"
+            android:textSize="16dp"
+            android:minLines="5"
+            android:paddingTop="8dp"
+            android:paddingLeft="8dp"
+            android:textColorHint="#d3d3d3"
+            android:textColor="@color/white"
+            android:hint="Type your message here:"
+            android:scrollHorizontally="false"
+            android:scrollbars="vertical"
+            android:background="@drawable/gradient2"
+            android:singleLine="false" />
+
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/btn_Submit"
+        android:textColor="#ffffff"
+        android:textSize="26dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentBottom="true"
+        android:background="#015480"
+        />
+    </LinearLayout>
+
+
+</RelativeLayout>

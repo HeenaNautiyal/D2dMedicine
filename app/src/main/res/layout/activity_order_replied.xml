@@ -16,30 +16,35 @@
     </android.support.v7.widget.Toolbar>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:id="@+id/lay1"
         android:layout_below="@+id/toolbar"
         android:orientation="vertical"
         >
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Order Deliver"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginRight="36dp"
-        android:paddingLeft="4dp"
-        android:textStyle="bold"
-        android:textSize="26dp"
-        android:gravity="center"
-        android:id="@+id/btndeparture"
-        android:layout_marginBottom="10dp"
-        android:textColor="@color/white"
-        android:background="@color/dark"/>
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="2dp"
+            android:id="@+id/scrolllay1"
+            android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:gravity="center"
+    android:textSize="18dp"
+    android:id="@+id/textmail"
+    android:text="heena@outsourcingservicesusa.com"/>
 
     <EditText
         android:layout_marginTop="10dp"
@@ -48,41 +53,111 @@
         android:layout_height="40dp"
         android:id="@+id/ed_expier"
         android:textSize="16dp"
-        android:layout_below="@+id/btndeparture"
+        android:layout_below="@+id/textmail"
         android:textColor="@color/text_shadow"
         android:paddingLeft="10dp"
-        android:inputType="date"
         android:hint=" Order Departure date"
         android:textColorHint="#d3d3d3"
         android:background="@drawable/gradient2"
         android:singleLine="true"
         />
-    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
         android:layout_below="@+id/lay1"
         android:id="@+id/lay2"
         android:orientation="vertical"
         >
-        <Button
+        <RadioGroup
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Out of stock"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="36dp"
-            android:layout_marginRight="36dp"
-            android:paddingLeft="4dp"
-            android:textStyle="bold"
-            android:textSize="26dp"
-            android:gravity="center"
-            android:id="@+id/btnstock"
-            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/text"
+            android:id="@+id/myRadioGroup"
+            android:layout_marginTop="6dp"
+            android:checkedButton="@+id/sound" >
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rd_1"
+                android:text="Your order has been placed. Thank you for Placing order." />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rb_2"
+                android:layout_marginTop="6dp"
+                android:text="This medicine is out of stock in our store. Please Order again and select another store. Thank you for Placing order." />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rb_3"
+                android:layout_marginTop="4dp"
+                android:text="This prescription will be added to list." />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rb_4"
+                android:layout_marginTop="4dp"
+                android:text="We can't add this prescription to our medicine list." />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/ed_commenmt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|left"
+            android:lines="20"
+            android:layout_marginRight="20dp"
+            android:minLines="4"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/gradient2"
+            android:paddingLeft="10dp"
+            android:paddingTop="4dp"
+            android:textColorHint="#d3d3d3"
             android:textColor="@color/white"
-            android:background="@color/dark"/>
+            android:hint="Comment*"
+            android:scrollHorizontally="false"
+            android:scrollbars="vertical"
+            android:singleLine="false" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox1"
+            android:textColor="#015480"
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_gravity="left"
+            android:text="This Order will be delievered on"
+            android:layout_below="@+id/textView1"
+            android:layout_alignLeft="@+id/textView1"
+            android:layout_alignStart="@+id/textView1"
+            android:checked="false" />
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:textColor="#015480"
+        android:textSize="12dp"
+        android:gravity="center"
+        android:padding="6dp"
+        android:paddingTop="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="bottom"
+        android:id="@+id/tv_date"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@id/ed_password"
+        android:text=" date"/>
+    </LinearLayout>
+
 
     </LinearLayout>
 
@@ -98,5 +173,7 @@
             android:layout_alignParentRight="false"
             android:layout_alignParentEnd="true"
             />
-
+    </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 </RelativeLayout>

@@ -50,7 +50,7 @@ public class TokenGen extends AppCompatActivity {
                     new android.os.Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                              CustomeDialoge();
+                              //CustomeDialoge();
                               finish();
                         }
                     }, 2000);

@@ -1,16 +1,21 @@
 package com.bizhawkz.d2dmedicine;
 
+import android.annotation.TargetApi;
 import android.app.ProgressDialog;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.ParseException;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -34,12 +39,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class BabyCare extends AppCompatActivity {
+public class BabyCare extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     ArrayList<Chemist> actorsList;
     ImageView btnback;
     ArrayList<String> list = new ArrayList<String>();
-    int abcd =0;
+    int abcd = 0;
 
     Toolbar toolbar;
     Button btn_continue;
@@ -59,11 +64,11 @@ public class BabyCare extends AppCompatActivity {
     String license;
     String email;
     String mail;
-    String mail1,quan;
+    String mail1, quan;
     String chemmail;
-    TextView tv,medicine,composition,description;
+    TextView tv, medicine, composition, description;
 
-    public int count=0;
+    public int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,37 +83,13 @@ public class BabyCare extends AppCompatActivity {
         HashMap<String, String> user = session.getUserDetails();
         mail1 = user.get(SessionManager1.KEY_EMAIL);
         chemmail = user.get(SessionManager1.KEY_CHEMEMAIL);
-
         actorsList = new ArrayList<Chemist>();
         worldpopulationlist = new ArrayList<Chemist>();
 
-        editsearch = (EditText) findViewById(R.id.search);
         new JSONAsyncTask().execute("http://d2dmedicine.com/aPPmob_lie/insertdata.php?caseid=27&catid=32");
 
         final ListView listview = (ListView) findViewById(R.id.list);
         adapter2 = new ListViewAdapter2(this, actorsList);
-
-        editsearch.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-            @Override
-            public void afterTextChanged(Editable s) {
-                String text = editsearch.getText().toString();
-                if (text.length() > 0) {
-                    String text2 = text.substring(0, 1).toUpperCase();
-                    text2.equalsIgnoreCase(text2);
-                    adapter2.filter(text2);
-                } else {
-                    adapter2.clearData();
-                    new JSONAsyncTask().execute("http://d2dmedicine.com/aPPmob_lie/insertdata.php?caseid=27&catid=32");
-                }
-            }
-        });
-
 
         btn_continue = (Button) findViewById(R.id.btn_continue);
 
@@ -133,15 +114,14 @@ public class BabyCare extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 JSONArray jsonArray = new JSONArray();
                 ArrayList<Chemist> countryList = adapter2.worldpopulationlist;
                 for (int i = 0; i < countryList.size(); i++) {
                     Chemist actors = countryList.get(i);
-                    if (actors.isSelected()) {
+                    if (actors.getSelected()) {
                         address = actors.getMedicine();
                         medid = actors.getMedicineid();
-                        quan=actors.getQuantity();
+                        quan = actors.getQuantity();
                         mobile = chemmail;
 
                         JSONObject student1 = new JSONObject();
@@ -149,35 +129,48 @@ public class BabyCare extends AppCompatActivity {
                             student1.put("medicine_name", address);
                             student1.put("medicine_id", medid);
                             student1.put("Chem_name", mobile);
-                            student1.put("quantity",quan);
+                            student1.put("quantity", quan);
                             jsonArray.put(student1);
                         } catch (JSONException e) {
                             // TODO Auto-generated catch block
                             e.printStackTrace();
                         }
+                        abcd = jsonArray.length();
+                        System.out.println("Length: " + abcd);
+
+                        if (abcd >= 1) {
+                            Intent intent = new Intent(BabyCare.this, Ordernow.class);
+                            intent.putExtra("jsonArray", jsonArray.toString());
+                            intent.putExtra("number", abcd);
+                            startActivity(intent);
+                        }
+
                     }
-                    abcd=jsonArray.length();
-
                 }
-
-                //  mCounter.setText(abc);
-                System.out.println("Length: " + abcd);
-
-                Intent intent = new Intent(BabyCare.this, Ordernow.class);
-                intent.putExtra("jsonArray", jsonArray.toString());
-                intent.putExtra("number",abcd);
-                startActivity(intent);
             }
         });
-
-
     }
 
-
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        // Inflate menu to add items to action bar if it is present.
+        inflater.inflate(R.menu.menu_main, menu);
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =
+                (SearchView) menu.findItem(R.id.menu_search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
+        searchView.setOnQueryTextListener(this);
+        return true;
+    }
 
     private void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("BabyCare");
+        toolbar.setTitle("Baby Care");
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
@@ -192,7 +185,27 @@ public class BabyCare extends AppCompatActivity {
                     }
                 });
 
-//        mCounter.setText(String.valueOf(abcd));
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        adapter2.notifyDataSetChanged();
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        if (newText.isEmpty()) {
+            adapter2.clearData();
+            new JSONAsyncTask().execute("http://d2dmedicine.com/aPPmob_lie/insertdata.php?caseid=27&catid=32");
+            adapter2.notifyDataSetChanged();
+
+        } else {
+            adapter2.clearData();
+            new JSONAsyncTask().execute("http://d2dmedicine.com/aPPmob_lie/insertdata.php?caseid=15&cat_id=32&medicine=" + newText + "");
+            adapter2.notifyDataSetChanged();
+        }
+        return false;
     }
 
     class JSONAsyncTask extends AsyncTask<String, Void, Boolean> {
@@ -260,9 +273,71 @@ public class BabyCare extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Medicine not found", Toast.LENGTH_LONG).show();
             }
         }
+    }
 
-        public void onBackPressed() {
-            moveTaskToBack(true);
+    class textchange extends AsyncTask<String, Void, Boolean> {
+        ProgressDialog dialog;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog = new ProgressDialog(BabyCare.this);
+            dialog.setMessage("Loading, please wait");
+            dialog.show();
+            dialog.setCancelable(false);
+        }
+
+        @Override
+        protected Boolean doInBackground(String... urls) {
+            try {
+                HttpGet httppost = new HttpGet(urls[0]);
+                HttpClient httpclient = new DefaultHttpClient();
+                HttpResponse response = httpclient.execute(httppost);
+                int status = response.getStatusLine().getStatusCode();
+
+                if (status == 200) {
+                    HttpEntity entity = response.getEntity();
+                    String data = EntityUtils.toString(entity);
+
+                    JSONObject jsono = new JSONObject(data);
+                    JSONArray jarray = jsono.getJSONArray("result");
+                    for (int i = 0; i < jarray.length(); i++) {
+                        JSONObject object = jarray.getJSONObject(i);
+
+                        Chemist actor = new Chemist();
+
+                        actor.setMedicineid(object.getString("medicine_id"));
+                        actor.setMedicine(object.getString("medicine_name"));
+                        actor.setMenufacuter(object.getString("manufacture_by"));
+                        actor.setCompostion(object.getString("composition"));
+                        actor.setDescription(object.getString("description"));
+                        actor.setPrice(object.getString("price"));
+                        actor.setProductImage(object.getString("product_image"));
+                        actor.setUserImage(object.getString("user_added_image"));
+                        actor.setStock(object.getString("stock"));
+                        actor.setCategory(object.getString("category_name"));
+                        actor.setQuantity(object.getString("qty"));
+                        actorsList.add(actor);
+                    }
+                    return true;
+                }
+
+            } catch (ParseException e1) {
+                e1.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return false;
+        }
+
+        protected void onPostExecute(Boolean result) {
+            dialog.cancel();
+            adapter2.notifyDataSetChanged();
+            if (result == false) {
+                Toast.makeText(getApplicationContext(), "Medicine not found", Toast.LENGTH_LONG).show();
+            }
         }
     }
 }

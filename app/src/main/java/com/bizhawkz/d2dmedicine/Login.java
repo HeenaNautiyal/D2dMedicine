@@ -183,7 +183,6 @@ public class Login extends AppCompatActivity {
                 JSONObject jsonResult = new JSONObject(result);
                 String message = jsonResult.getString("udata");
                 if (message.equals("1")) {
-
                     String message2 = jsonResult.getString("result");
                     if (message2.equals("1")) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
@@ -203,7 +202,9 @@ public class Login extends AppCompatActivity {
                                     }
                                 });
                         builder.show();
-                    } else {
+                    }
+                    else  if (message2.equals("2"))
+                    {
                         AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
                         TextView myMsg = new TextView(Login.this);
                         myMsg.setText("Congratulations!");

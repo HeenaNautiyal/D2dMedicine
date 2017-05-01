@@ -94,27 +94,24 @@ public class ListViewAdapter2 extends BaseAdapter {
         holder.btnadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int position=(Integer)v.getTag();
                 final Chemist Chem=worldpopulationlist.get(position);
                 abc=Integer.parseInt(Chem.getQuantity())+1;
                 Chem.setQuantity(String.valueOf(abc));
                 worldpopulationlist.set(position,Chem);
-                Log.e("Button Item",String.valueOf(abc));
                 notifyDataSetChanged();
                 holder.rank.setText(worldpopulationlist.get(position).getQuantity());
+
             }
         });
         holder.btnsub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("Button clicked", "Clicked");
-                int position = (Integer) v.getTag();
+
                 final Chemist Chem = worldpopulationlist.get(position);
                 if (Integer.parseInt(Chem.getQuantity()) > 1) {
-                    abc = Integer.parseInt(Chem.getQuantity()) - 1;
+                    abc=Integer.parseInt(Chem.getQuantity())-1;
                     Chem.setQuantity(String.valueOf(abc));
-                    worldpopulationlist.set(position, Chem);
-                    Log.e("Button Item", String.valueOf(abc));
+                    worldpopulationlist.set(position,Chem);
                     notifyDataSetChanged();
                     holder.rank.setText(worldpopulationlist.get(position).getQuantity());
                 }

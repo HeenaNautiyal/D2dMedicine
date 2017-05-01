@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
@@ -27,25 +28,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class OrderRecieve extends AppCompatActivity {
+public class OrderComplete extends AppCompatActivity {
     ArrayList<Chemist> actorsList;
     ActorAdapter3 adapter;
     SessionManager1 session;
-    String mail,byeremail,orderid,byerid,medicine;
+    String mail,byeremail,orderid,byerid;
     ImageView iv;
     Toolbar toolbar;
+    TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_recieve);
+        setContentView(R.layout.activity_order_complete);
         actorsList = new ArrayList<Chemist>();
 
         session = new SessionManager1(getApplicationContext());
         session.checkLogin();
         HashMap<String, String> user = session.getUserDetails();
         mail = user.get(SessionManager1.KEY_EMAIL);
-      
-        new JSONAsyncTask().execute("http://d2dmedicine.com/aPPmob_lie/insertdata.php?caseid=29&email="+mail.replaceAll(" ","")+"");
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       //http://d2dmedicine.com/aPPmob_lie/insertdata.php?caseid=29&email="+mail.replaceAll(" ","")+"
+        new JSONAsyncTask().execute("http://d2dmedicine.com/aPPmob_lie/insertdata.php?caseid=89&email="+mail+"");
         initToolBar();
 
         ListView listview = (ListView)findViewById(R.id.list);
@@ -64,7 +66,9 @@ public class OrderRecieve extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
 
                 if (actors.getIsRowSelected()) {
-                    byerid = actors.getDate();
+                    Intent it= new Intent(OrderComplete.this,ChemistRating.class);
+                    startActivity(it);
+                   /* byerid = actors.getDate();
                     orderid = actors.getId();
                     medicine = actors.getMedicine();
                     Intent it= new Intent(OrderRecieve.this,OrderReplied.class);
@@ -73,16 +77,15 @@ public class OrderRecieve extends AppCompatActivity {
                     b.putString("orderid",orderid);
                     b.putString("medicine",medicine);
                     it.putExtras(b);
-                    startActivity(it);
+                    startActivity(it);*/
                 }
             }
         });
-
     }
 
     private void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Order Recieved");
+        toolbar.setTitle("Complete Details");
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
@@ -91,7 +94,7 @@ public class OrderRecieve extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent It = new Intent(OrderRecieve.this,UploadMedicine.class);
+                        Intent It = new Intent(OrderComplete.this,UploadMedicine.class);
                         startActivity(It);
                     }
                 });
@@ -104,7 +107,7 @@ public class OrderRecieve extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            dialog = new ProgressDialog(OrderRecieve.this);
+            dialog = new ProgressDialog(OrderComplete.this);
             dialog.setMessage("Please wait while Loading...");
             dialog.show();
             dialog.setCancelable(false);
@@ -135,9 +138,7 @@ public class OrderRecieve extends AppCompatActivity {
                         actor.setAddress(object.getString("user_address"));
                         actor.setQuantity(object.getString("med_qty"));
                         actorsList.add(actor);
-                        /*byerid=object.getString("user_email");
-                        orderid=object.getString("id");
-                        medicine=object.getString("med_name");*/
+
                     }
                     return true;
                 }
@@ -156,7 +157,5 @@ public class OrderRecieve extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No order has been recieved yet!", Toast.LENGTH_LONG).show();
 
         }
-
     }
 }
-

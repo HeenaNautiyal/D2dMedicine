@@ -28,8 +28,8 @@ public class ActorAdapter1 extends ArrayAdapter<Chemist> {
         Resource = resource;
         actorList = objects;
     }
-
     @Override
+
     public View getView(int position, View convertView, ViewGroup parent) {
 
         View v = convertView;

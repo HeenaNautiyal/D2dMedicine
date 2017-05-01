@@ -31,7 +31,7 @@ public class UploadMedicine extends AppCompatActivity {
 
     Toolbar toolbar;
     ImageButton iv_profile;
-    TextView btn,btnadmin,btnsummery,btnRecieved;
+    TextView btn,btnadmin,btnsummery,btnRecieved,btnprocess,btncomplete;
     TextView tvname,tvmail;
     private CoordinatorLayout coordinatorLayout;
     SessionManager1 session;
@@ -78,7 +78,24 @@ public class UploadMedicine extends AppCompatActivity {
         btnadmin=(TextView) findViewById(R.id.btn_Contact);
         btnsummery=(TextView) findViewById(R.id.btn_notify);
         btnRecieved=(TextView) findViewById(R.id.btnRecieve);
+        btnprocess=(TextView) findViewById(R.id.btnprocessing);
+        btncomplete=(TextView)findViewById(R.id.btncomplete);
 
+        btnprocess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it=new Intent(UploadMedicine.this,OrderProcessing.class);
+                startActivity(it);
+            }
+        });
+
+        btncomplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it=new Intent(UploadMedicine.this,OrderComplete.class);
+                startActivity(it);
+            }
+        });
         btnRecieved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

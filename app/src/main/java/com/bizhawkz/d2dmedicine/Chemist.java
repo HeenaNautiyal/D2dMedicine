@@ -53,6 +53,8 @@ public class Chemist {
     private String id;
     private String image2;
     private int medid;
+    boolean status=false;
+    private String statusid;
 
 
     public Chemist() {
@@ -64,7 +66,7 @@ public class Chemist {
                    String fname,String address,String city,String state,String category,String medicine
             ,String menufacuter,String compostion,String addedby,String todaydate,String userip,
                    String stock,String date,String Quantity,boolean selected,String medicineid,
-                   String email,String expiery,String userImage,String productImage,int medid,String price) {
+                   String email,String expiery,String userImage,String productImage,int medid,String price,boolean status,String statusid) {
         super();
         this.name = name;
         this.description = description;
@@ -93,6 +95,8 @@ public class Chemist {
         this.productImage=productImage;
         this.medid=medid;
         this.price=price;
+        this.status=status;
+        this.statusid=statusid;
 
     }
 
@@ -344,13 +348,9 @@ public class Chemist {
         this.city2 = city2;
     }
 
-    public void setState2(String state2) {
-        this.state2 = state2;
-    }
-
-    public void setPincode2(String pincode2) {
-        this.pincode2 = pincode2;
-    }
+   public String getstatus(){
+       return statusid;
+   }
 
     public String getDescription() {
         return description;
@@ -365,7 +365,8 @@ public class Chemist {
    }
 
     public void setSelected(boolean selected) {
-        this.selected = selected;
+         this.selected = selected;
+
     }
 
     public void setMedicineid(String medicineid) {
@@ -396,11 +397,15 @@ public class Chemist {
         this.medid = medid;
     }
 
-    public int getMedid() {
-        return medid;
-    }
-
     public String getPrice() {
         return price;
+    }
+
+    public void setStatusid(String statusid) {
+        this.statusid = statusid;
+    }
+
+    public String getId() {
+        return id;
     }
 }

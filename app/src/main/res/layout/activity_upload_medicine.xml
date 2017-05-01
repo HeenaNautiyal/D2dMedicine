@@ -1,210 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg1"
-    tools:context="com.bizhawkz.d2dmedicine.UploadMedicine">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:orientation="horizontal"
-    android:background="@color/dark"
-    android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:id="@+id/iv_profile"
-                android:src="@android:drawable/ic_menu_view"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Profile"
-                android:textSize="16dp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:textColor="@color/white"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Email: "
-                android:id="@+id/mail1"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="60dp"
-                android:textColor="@color/white"
-                android:textSize="16dp"
-                />
-        </LinearLayout>
 
-        </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:weightSum="2"
-        android:layout_marginBottom="@dimen/padd"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout2">
-    <Button
-        android:layout_width="fill_parent"
-        android:id="@+id/btnRecieve"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="@dimen/padd"
-        android:layout_height="38dp"
-        android:text="Recieved Orders"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:background="#015480" />
-        <Button
-            android:layout_width="fill_parent"
-            android:id="@+id/btn_upload"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="@dimen/padd"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:text="Upload Medicines"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:background="#015480" />
-
-        <Button
-            android:layout_width="fill_parent"
-            android:id="@+id/btn_notify"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:layout_marginBottom="@dimen/padd"
-            android:layout_height="38dp"
-            android:text="Medicine Summary"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:background="#015480" />
-        <Button
-            android:layout_width="fill_parent"
-            android:id="@+id/btn_Contact"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:layout_marginBottom="@dimen/padd"
-            android:layout_height="38dp"
-            android:text="Contact Admin"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:background="#015480" />
-    </LinearLayout>
-    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/coordinatorLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".Mem">
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:src="@android:drawable/ic_lock_power_off"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="8dp"
-            app:backgroundTint="#015480"
-            android:layout_marginRight="8dp"
-            android:layout_alignParentEnd="true" />
-    </android.support.design.widget.CoordinatorLayout>
-       &lt;!&ndash; <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:weightSum="2"
-            android:layout_marginBottom="@dimen/padd"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/linearLayout2">
-            <Button
-                android:layout_width="fill_parent"
-                android:id="@+id/btnRecieve"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="@dimen/padd"
-                android:layout_height="38dp"
-                android:text="Recieved Orders"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:background="#015480" />
-            <Button
-                android:layout_width="fill_parent"
-                android:id="@+id/btn_upload"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="@dimen/padd"
-                android:layout_height="38dp"
-                android:text="Upload Medicines"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:background="#015480" />
-
-            <Button
-                android:layout_width="fill_parent"
-                android:id="@+id/btn_notify"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="@dimen/padd"
-                android:layout_height="38dp"
-                android:text="Medicine Summary"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:background="#015480" />
-            <Button
-                android:layout_width="fill_parent"
-                android:id="@+id/btn_Contact"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="@dimen/padd"
-                android:layout_height="38dp"
-                android:text="Contact Admin"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:background="#015480" />
-
-
-        </LinearLayout>&ndash;&gt;
-   &lt;!&ndash; <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/coordinatorLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:src="@android:drawable/ic_lock_power_off"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:backgroundTint="@color/dark"
-            android:layout_marginBottom="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_alignParentEnd="true" />
-    </android.support.design.widget.CoordinatorLayout>&ndash;&gt;
-</RelativeLayout>-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -277,7 +72,7 @@
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/profile_layout"
                 android:layout_marginTop="5dp"
                 android:orientation="vertical">
@@ -294,6 +89,30 @@
                     android:textColor="@color/white"
                     android:padding="20dp"
                     android:text="Recieved Orders"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@color/dark"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:id="@+id/btnprocessing"
+                    android:elevation="4dp"
+                    android:textColor="@color/white"
+                    android:padding="20dp"
+                    android:text="Processing Orders"/>
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@color/dark"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:id="@+id/btncomplete"
+                    android:elevation="4dp"
+                    android:textColor="@color/white"
+                    android:padding="20dp"
+                    android:text="Complete Orders"/>
 
                 <TextView
                     android:layout_width="fill_parent"

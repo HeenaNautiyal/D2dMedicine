@@ -37,6 +37,7 @@ public class ActorAdapter3 extends ArrayAdapter<Chemist> {
             holder.tvName = (TextView) v.findViewById(R.id.medname);
             holder.tvDOB=(TextView)v.findViewById(R.id.address);
             holder.tvHeight=(TextView)v.findViewById(R.id.email);
+            holder.tvorderid=(TextView)v.findViewById(R.id.tv_orderid);
 
             v.setTag(holder);
         } else {
@@ -46,6 +47,7 @@ public class ActorAdapter3 extends ArrayAdapter<Chemist> {
         holder.tvName.setText(actorList.get(position).getMedicine());
         holder.tvDOB.setText(actorList.get(position).getAddress());
         holder.tvHeight.setText(actorList.get(position).getDate());
+        holder.tvorderid.setText(actorList.get(position).getId());
         return v;
 
     }
@@ -55,6 +57,7 @@ public class ActorAdapter3 extends ArrayAdapter<Chemist> {
         public TextView tvName;
         public TextView tvDOB;
         public TextView tvHeight;
+        public TextView tvorderid;
     }
 
 

@@ -16,7 +16,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -45,7 +48,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Addressadd extends AppCompatActivity {
-    Button btnsubmit1;
+    Button btnsubmit1,OK1;
     Toolbar toolbar;
     ImageView edt;
     Intent it;
@@ -127,65 +130,6 @@ public class Addressadd extends AppCompatActivity {
                 }
             }
         });
-       /* btnsubmit.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        stcty = city2.getText().toString();
-        ststat = state2.getText().toString();
-        stpin = pincode2.getText().toString();
-        stnum = num1.getText().toString();
-        smail=edmail2.getText().toString();
-
-        if (stad.matches("") || stcty.matches("") || ststat.matches("") ||
-                stpin.matches("") || stnum.matches("")||smail.matches("") ) {
-
-            AlertDialog.Builder builder = new AlertDialog.Builder(Addressadd.this);
-            TextView myMsg = new TextView(Addressadd.this);
-            myMsg.setText("Warning!");
-            myMsg.setGravity(Gravity.CENTER_HORIZONTAL);
-            myMsg.setTextSize(20);
-
-            myMsg.setTextColor(Color.BLACK);
-            builder.setCustomTitle(myMsg);
-            builder.setMessage("All fields are mandatory.");
-            builder.setPositiveButton("OK",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog,
-                                            int which) {
-                            dialog.cancel();
-                        }
-                    });
-            builder.show();
-        }
-        else{
-            new Registration().execute();
-        }
-    }
-});*/
-
-
-
-
-       /* address2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                if(stad.toString().trim().length()==0){
-                    btnsubmit.setEnabled(false);
-                } else {
-                    btnsubmit.setEnabled(true);
-                }
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });*/
 
         HashMap<String, String> user = session.getUserDetails();
         mail = user.get(SessionManager1.KEY_EMAIL);
@@ -210,12 +154,12 @@ public class Addressadd extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        onBackPressed();
-                        /*Intent it = new Intent(Addressadd.this, UploadPresc.class);
-                        Bundle b = new Bundle();
+                       // onBackPressed();
+                        Intent it = new Intent(Addressadd.this, DataActivity.class);
+                        /*Bundle b = new Bundle();
                         b.putString("name", aaa);
-                        it.putExtras(b);
-                        startActivity(it);*/
+                        it.putExtras(b);*/
+                        startActivity(it);
                     }
                 });
     }
@@ -283,6 +227,8 @@ public class Addressadd extends AppCompatActivity {
                 String add1=address1+","+city+","+state1;
                            loginUser(mail, "4", strJson, add1);
                new nofication().execute();
+                Intent it =new Intent(Addressadd.this,DataActivity.class);
+                startActivity(it);
             }
         }
     }
@@ -311,7 +257,8 @@ public class Addressadd extends AppCompatActivity {
                                     dialog.dismiss();
                                     session = new SessionManager1(getApplicationContext());
                                     session.checkRegister();
-                                    launchMarket();
+                                    //launchMarket();
+                                  //  buildDialog2(R.style.DialogTheme, "Left - Right Animation!");
                                 }
                             });
                     builder.show();
@@ -345,7 +292,7 @@ public class Addressadd extends AppCompatActivity {
         if (isFirstRun){
             // Place your dialog code here to display the dialog
 
-         /*   getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE)
                     .edit()
                     .putBoolean("isFirstRun", false)
                     .apply();
@@ -374,8 +321,8 @@ public class Addressadd extends AppCompatActivity {
             alert.requestWindowFeature(Window.FEATURE_NO_TITLE);
             WindowManager.LayoutParams wmlp = alert.getWindow().getAttributes();
             wmlp.gravity = Gravity.BOTTOM;
-            alert.show();*/
-            rating();
+            alert.show();
+           // rating();
         }
         else{
             Intent it= new Intent(Addressadd.this,DataActivity.class);
@@ -461,13 +408,15 @@ public class Addressadd extends AppCompatActivity {
                     myMsg.setTextColor(Color.BLACK);
                     builder.setCustomTitle(myMsg);
                     builder.setMessage("Your alternate Delivery address has been changed");
-                    builder.setPositiveButton("Continue.",
+                    builder.setPositiveButton("Continue",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog,
                                                     int which) {
                                     String add2=stad.replaceAll(" ","%20")+","+stcty.replaceAll(" ", "%20")+","+ststat.replaceAll(" ", "%20");
                                     loginUser(mail, "4", strJson,add2.replaceAll(" ","%20"));
                                     new nofication().execute();
+                                    Intent it =new Intent(Addressadd.this,DataActivity.class);
+                                    startActivity(it);
                                 }
                             });
                     builder.show();

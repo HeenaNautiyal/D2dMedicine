@@ -21,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TokenGen" />
+        <activity android:name=".ChemistRating" />
         <activity android:name=".Nearchemeist" />
         <activity android:name=".Chemis" />
         <activity android:name=".ForgetPassword" />
@@ -80,7 +80,10 @@
         <activity android:name=".OrderTrack" />
         <activity android:name=".OTCCounter" />
         <activity android:name=".TestOrderRecieved" />
-        <activity android:name=".OrderReplied"></activity>
+        <activity android:name=".OrderReplied" />
+        <activity android:name=".OrderComplete" />
+        <activity android:name=".OrderProcessing" />
+        <activity android:name=".TokenGen"></activity>
     </application>
 
 </manifest>

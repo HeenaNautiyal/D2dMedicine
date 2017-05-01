@@ -98,7 +98,6 @@ public class CheRegis extends AppCompatActivity {
         dateFormatter = new SimpleDateFormat("MM/dd/yyyy", Locale.US);
 
         findViewsById();
-
         setDateTimeField();
         submit = (Button) findViewById(R.id.btn_Submit);
         fname = (EditText) findViewById(R.id.ef_fname);
@@ -254,7 +253,6 @@ public class CheRegis extends AppCompatActivity {
 
             pb.setMessage("Please wait while Loading...");
             pb.show();
-
             fnamw1 = fname.getText().toString();
             lname1 = lname.getText().toString();
             email1 = email.getText().toString();
@@ -266,7 +264,6 @@ public class CheRegis extends AppCompatActivity {
             addr1=addr.getText().toString();
             city1=city.getText().toString();
             state1=state.getText().toString();
-
         }
 
         @Override

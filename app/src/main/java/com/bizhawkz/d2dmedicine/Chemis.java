@@ -36,18 +36,13 @@ public class Chemis extends AppCompatActivity {
         mail1 = user.get(SessionManager1.KEY_EMAIL);
         session.checkLogin();
 
-       /* Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(),R.drawable.door);
-        Bitmap circularBitmap = ImageConverter.getRoundedCornerBitmap(bitmap, 100);
-        ImageView circularImageView = (ImageView)findViewById(R.id.imgProfilePicture);
-        circularImageView.setImageBitmap(circularBitmap);*/
-
         number=(TextView)findViewById(R.id.number);
         address=(TextView)findViewById(R.id.Address);
         email=(TextView)findViewById(R.id.email);
         name=(TextView)findViewById(R.id.name);
         license=(TextView)findViewById(R.id.license);
         expiery=(TextView)findViewById(R.id.expiry);
-       /* state=(TextView)findViewById(R.id.state);*/
+
 
         btn_continue=(Button)findViewById(R.id.btn_continue);
 
@@ -56,7 +51,7 @@ public class Chemis extends AppCompatActivity {
         aaa=(String)b.getCharSequence("name");
         ccc=(String)b.getCharSequence("address");
         ddd=(String)b.getCharSequence("city");
-       /* eee=(String)b.getCharSequence("state");*/
+
         fff=(String)b. getCharSequence("mobileno");
         ggg=(String)b. getCharSequence("licenseno");
         iii=(String)b. getCharSequence("expirydate");
@@ -68,7 +63,7 @@ public class Chemis extends AppCompatActivity {
         email.setText("Email: "+mail);
         license.setText("License Number: "+ggg);
         number.setText("Phone Number: "+fff);
-      /*  state.setText(eee);*/
+
         address.setText("Address: "+ccc);
         expiery.setText("License Expiery: "+iii);
 
