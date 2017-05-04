@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg1"
-    tools:context="com.bizhawkz.d2dmedicine.OrderComplete">
+    tools:context="com.bizhawkz.d2dRoni.OrderComplete">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"

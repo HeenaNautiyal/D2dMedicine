@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg2"
-    tools:context="com.bizhawkz.d2dmedicine.OrderReplied">
+    tools:context="com.bizhawkz.d2dRoni.OrderReplied">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -47,7 +47,7 @@
     android:text="heena@outsourcingservicesusa.com"/>
 
     <EditText
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/text"
             android:id="@+id/myRadioGroup"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="16dp"
             android:checkedButton="@+id/sound" >
             <RadioButton
                 android:layout_width="wrap_content"
@@ -88,16 +88,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/rb_2"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="16dp"
                 android:text="This medicine is out of stock in our store. Please Order again and select another store. Thank you for Placing order." />
 
-            <RadioButton
+            RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/rb_3"
                 android:layout_marginTop="4dp"
                 android:text="This prescription will be added to list." />
-            <RadioButton
+            RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/rb_4"
@@ -114,7 +114,7 @@
             android:lines="20"
             android:layout_marginRight="20dp"
             android:minLines="4"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="22dp"
             android:background="@drawable/gradient2"
             android:paddingLeft="10dp"
             android:paddingTop="4dp"
@@ -128,52 +128,25 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/checkBox1"
-            android:textColor="#015480"
-            android:textStyle="bold"
-            android:textSize="12dp"
-            android:layout_gravity="left"
-            android:text="This Order will be delievered on"
-            android:layout_below="@+id/textView1"
-            android:layout_alignLeft="@+id/textView1"
-            android:layout_alignStart="@+id/textView1"
-            android:checked="false" />
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:textColor="#015480"
-        android:textSize="12dp"
-        android:gravity="center"
-        android:padding="6dp"
-        android:paddingTop="18dp"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        android:foregroundGravity="bottom"
-        android:id="@+id/tv_date"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="8dp"
-        android:layout_below="@id/ed_password"
-        android:text=" date"/>
+
     </LinearLayout>
 
 
     </LinearLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="26dp"
-            android:textColor="#ffffff"
-            android:text="Submit"
-            android:id="@+id/btn_continue"
-            android:layout_alignParentBottom="true"
-            android:background="#015480"
-            android:layout_alignParentRight="false"
-            android:layout_alignParentEnd="true"
-            />
-    </LinearLayout>
+        </LinearLayout>
         </ScrollView>
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="26dp"
+        android:textColor="#ffffff"
+        android:text="Submit"
+        android:id="@+id/btn_continue"
+        android:background="#015480"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

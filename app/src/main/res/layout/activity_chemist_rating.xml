@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg1"
-    tools:context="com.bizhawkz.d2dmedicine.ChemistRating">
+    tools:context="com.bizhawkz.d2dRoni.ChemistRating">
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -34,31 +34,23 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-
+ <ScrollView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/scrll_1"
+     android:layout_below="@+id/Text1"
+     android:layout_marginBottom="10dp"
+     android:layout_alignParentBottom="true">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:id="@+id/lay2"
-        android:layout_below="@+id/Text1"
+        android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_chemistmail"
-        android:text="Chemist mail"
-        android:textSize="16dp"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/text_shadow"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-       />
-        <RatingBar
+            <RatingBar
             android:layout_width="wrap_content"
             android:layout_marginTop="20dp"
             android:id="@+id/ratingBar1"
@@ -71,7 +63,10 @@
             android:gravity="top|left"
             android:lines="20"
             android:textSize="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
             android:minLines="5"
+            android:layout_marginBottom="10dp"
             android:paddingTop="8dp"
             android:paddingLeft="8dp"
             android:textColorHint="#d3d3d3"
@@ -83,6 +78,8 @@
             android:singleLine="false" />
 
 
+    </LinearLayout>
+    </ScrollView>
 
     <Button
         android:layout_width="fill_parent"
@@ -92,11 +89,8 @@
         android:textColor="#ffffff"
         android:textSize="26dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentBottom="true"
         android:background="#015480"
-        />
-    </LinearLayout>
-
-
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

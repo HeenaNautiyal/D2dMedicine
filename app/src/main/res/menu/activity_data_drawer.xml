@@ -12,7 +12,7 @@
                 />
             <item
                 android:id="@+id/iv_orderTrack"
-                android:title="My Order" />
+                android:title="My Orders" />
             <item
                 android:id="@+id/iv_signout"
                 android:title="LogOut" />

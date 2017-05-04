@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bizhawkz.d2dmedicine">
+    package="com.bizhawkz.d2dRoni">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,61 +14,61 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity">
+        <activity android:name="com.bizhawkz.d2dRoni.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChemistRating" />
-        <activity android:name=".Nearchemeist" />
-        <activity android:name=".Chemis" />
-        <activity android:name=".ForgetPassword" />
-        <activity android:name=".Termspage" />
+        <activity android:name="com.bizhawkz.d2dRoni.ChemistRating" />
+        <activity android:name="com.bizhawkz.d2dRoni.Nearchemeist" />
+        <activity android:name="com.bizhawkz.d2dRoni.Chemis" />
+        <activity android:name="com.bizhawkz.d2dRoni.ForgetPassword" />
+        <activity android:name="com.bizhawkz.d2dRoni.Termspage" />
         <activity
-            android:name=".UploadPresc"
+            android:name="com.bizhawkz.d2dRoni.UploadPresc"
             android:label="@string/title_activity_data"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Profile" />
-        <activity android:name=".Search" />
-        <activity android:name=".Login" />
-        <activity android:name=".AlertmessageDialog" />
-        <activity android:name=".FirstAidnew" />
-        <activity android:name=".FirstAid1" />
-        <activity android:name=".Ordernow" />
-        <activity android:name=".DailyCare" />
-        <activity android:name=".BabyCare" />
-        <activity android:name=".RegisterOption" />
-        <activity android:name=".Register" />
-        <activity android:name=".CheRegis" />
-        <activity android:name=".UploadMedicine" />
-        <activity android:name=".OrderRecieve" />
-        <activity android:name=".Admincla" />
-        <activity android:name=".Chemistupload" />
-        <activity android:name=".Summery" />
-        <activity android:name=".Test" />
-        <activity android:name=".Test1" />
-        <activity android:name=".Test2" />
-        <activity android:name=".Test3" />
-        <activity android:name=".Test4" />
-        <activity android:name=".DataActivity" />
-        <activity android:name=".Addressadd" />
-        <activity android:name=".OrderPlace1" />
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.bizhawkz.d2dRoni.Profile" />
+        <activity android:name="com.bizhawkz.d2dRoni.Search" />
+        <activity android:name="com.bizhawkz.d2dRoni.Login" />
+        <activity android:name="com.bizhawkz.d2dRoni.AlertmessageDialog" />
+        <activity android:name="com.bizhawkz.d2dRoni.FirstAidnew" />
+        <activity android:name="com.bizhawkz.d2dRoni.FirstAid1" />
+        <activity android:name="com.bizhawkz.d2dRoni.Ordernow" />
+        <activity android:name="com.bizhawkz.d2dRoni.DailyCare" />
+        <activity android:name="com.bizhawkz.d2dRoni.BabyCare" />
+        <activity android:name="com.bizhawkz.d2dRoni.RegisterOption" />
+        <activity android:name="com.bizhawkz.d2dRoni.Register" />
+        <activity android:name="com.bizhawkz.d2dRoni.CheRegis" />
+        <activity android:name="com.bizhawkz.d2dRoni.UploadMedicine" />
+        <activity android:name="com.bizhawkz.d2dRoni.OrderRecieve" />
+        <activity android:name="com.bizhawkz.d2dRoni.Admincla" />
+        <activity android:name="com.bizhawkz.d2dRoni.Chemistupload" />
+        <activity android:name="com.bizhawkz.d2dRoni.Summery" />
+        <activity android:name="com.bizhawkz.d2dRoni.Test" />
+        <activity android:name="com.bizhawkz.d2dRoni.Test1" />
+        <activity android:name="com.bizhawkz.d2dRoni.Test2" />
+        <activity android:name="com.bizhawkz.d2dRoni.Test3" />
+        <activity android:name="com.bizhawkz.d2dRoni.Test4" />
+        <activity android:name="com.bizhawkz.d2dRoni.DataActivity" />
+        <activity android:name="com.bizhawkz.d2dRoni.Addressadd" />
+        <activity android:name="com.bizhawkz.d2dRoni.OrderPlace1" />
+        <activity android:name="com.bizhawkz.d2dRoni.MainActivity" />
 
-        <service android:name=".MyFirebaseMessagingService">
+        <service android:name="com.bizhawkz.d2dRoni.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".MyFirebaseInstanceIDService">
+        <service android:name="com.bizhawkz.d2dRoni.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".Mem" />
+        <activity android:name="com.bizhawkz.d2dRoni.Mem" />
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -77,13 +77,13 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".OrderTrack" />
-        <activity android:name=".OTCCounter" />
-        <activity android:name=".TestOrderRecieved" />
-        <activity android:name=".OrderReplied" />
-        <activity android:name=".OrderComplete" />
-        <activity android:name=".OrderProcessing" />
-        <activity android:name=".TokenGen"></activity>
+        <activity android:name="com.bizhawkz.d2dRoni.OrderTrack" />
+        <activity android:name="com.bizhawkz.d2dRoni.OTCCounter" />
+        <activity android:name="com.bizhawkz.d2dRoni.TestOrderRecieved" />
+        <activity android:name="com.bizhawkz.d2dRoni.OrderReplied" />
+        <activity android:name="com.bizhawkz.d2dRoni.OrderComplete" />
+        <activity android:name="com.bizhawkz.d2dRoni.OrderProcessing" />
+        <activity android:name="com.bizhawkz.d2dRoni.TokenGen"></activity>
     </application>
 
 </manifest>
